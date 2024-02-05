@@ -133,6 +133,10 @@ class DataArguments:
     def init_for_training(self, seed: int): # support mixing multiple datasets
         self.seed = seed
         dataset_names = [ds.strip() for ds in self.dataset.split(",")] if self.dataset is not None else []
+        print("init for training - hparams/data_args.py")
+        print(dataset_names)
+        print("dataset dir")
+        print(self.dataset_dir)
         try:
             with open(os.path.join(self.dataset_dir, DATA_CONFIG), "r") as f:
                 dataset_info = json.load(f)

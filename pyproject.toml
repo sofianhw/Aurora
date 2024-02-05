@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "aurora"
+version = "0.1.0"
+description = ""
+authors = ["sofian hadiwijaya <me.sofian.hadiwijaya@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+torch = "^1.13.1"
+transformers = "^4.36.0"
+accelerate = "^0.21.0"
+peft = "^0.7.0"
+trl = "^0.7.4"
+sentencepiece = "^0.1.99"
+protobuf = "^4.25.2"
+tiktoken = "^0.5.2"
+pydantic = "^2.6.0"
+fastapi = "^0.109.2"
+gradio = "^3.38.0"
+fsspec = "2023.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

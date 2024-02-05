@@ -1,0 +1,7 @@
+[
+    {
+        "instruction": "test instruction",
+        "input": "input",
+        "output": "output"
+    }
+]

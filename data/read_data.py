@@ -1,7 +1,7 @@
 import json
 from tqdm import tqdm
 
-jsonl_file_path = 'common_zh_70k.jsonl'
+jsonl_file_path = './data/common_zh_70k.jsonl'
 
 results = []
 # 打开JSON Lines文件
@@ -12,9 +12,10 @@ with open(jsonl_file_path, 'r', encoding='utf-8') as file:
         json_object = json.loads(line.strip())
         
         # 处理json_object，根据需要执行操作
-        #print(json_object['conversation'])
-        #print(len(json_object['conversation']))
-        #print(json_object['conversation'][0])
+        print(json_object['conversation'])
+        print(len(json_object['conversation']))
+        print(json_object['conversation'][0]['human'])
+        print(json_object['conversation'][0]['assistant'])
 
         if len(json_object['conversation'])>=2:
             rr = []
@@ -41,5 +42,5 @@ with open(jsonl_file_path, 'r', encoding='utf-8') as file:
         # 打印完第一行后终止循环
         #break
 
-with open('./sharegpt-70k.json', 'w', encoding="utf-8") as f1:
+with open('./data/sharegpt-70k.json', 'w', encoding="utf-8") as f1:
     json.dump(results, f1, ensure_ascii=False, indent=4)

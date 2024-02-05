@@ -69,7 +69,7 @@ def parse_eval_args(args: Optional[Dict[str, Any]] = None) -> _EVAL_CLS:
 
 def get_train_args(args: Optional[Dict[str, Any]] = None) -> _TRAIN_CLS:
     model_args, data_args, training_args, finetuning_args, generating_args = parse_train_args(args)
-
+    print("get training args - model/parser.py")
     # Setup logging
     if training_args.should_log:
         # The default of training_args.log_level is passive, so we set log level at info here to have that default.
@@ -81,7 +81,17 @@ def get_train_args(args: Optional[Dict[str, Any]] = None) -> _TRAIN_CLS:
     transformers.utils.logging.enable_default_handler()
     transformers.utils.logging.enable_explicit_format()
 
+    print("model args")
+    print(model_args)
+    print("data args")
+    print(data_args)
+    print("training args")
+    print(training_args)
+    print("finetuning args")
+    print(finetuning_args)
+
     # Check arguments
+    print("init_for_training - model/parser.py")
     data_args.init_for_training(training_args.seed)
 
     if finetuning_args.stage != "pt" and data_args.template is None:
