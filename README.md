@@ -298,8 +298,8 @@ pip install -r requirements.txt
 *Web*:
 ```python
 CUDA_VISIBLE_DEVICES=0 python src/web_demo.py \
-    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
-    --checkpoint_dir Aurora \
+    --model_name_or_path mistralai/Mistral-7B-Instruct-v0.1 \
+    --checkpoint_dir output \
     --finetuning_type lora \
     --quantization_bit 4 \
     --template mistral
@@ -319,7 +319,7 @@ CUDA_VISIBLE_DEVICES=0 python src/cli_demo.py \
 *API*:
 ```python
 CUDA_VISIBLE_DEVICES=0 python src/api_demo.py \
-    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+    --model_name_or_path mistralai/Mistral-7B-Instruct-v0.1 \
     --checkpoint_dir Aurora \
     --finetuning_type lora \
     --quantization_bit 4 \
@@ -338,11 +338,11 @@ If you have a single GPU and its GPU memory size is larger than 48GB, you can tr
 <summary>Train your MoE model</summary>
   
 ```python
-CUDA_VISIBLE_DEVICES=5 python   src/train_bash.py \
+CUDA_VISIBLE_DEVICES=5 python src/train_bash.py \
     --stage sft \
-    --model_name_or_path ./Mixtral-8x7B-Instruct-v0.1 \
+    --model_name_or_path mistralai/Mistral-7B-Instruct-v0.1 \
     --do_train \
-    --dataset alpaca_zh,alpaca_gpt4_zh,sharegpt \
+    --dataset avatara,indo_alpaca \
     --finetuning_type lora \
     --quantization_bit 4 \
     --overwrite_cache \
